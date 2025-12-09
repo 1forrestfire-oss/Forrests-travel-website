@@ -1,0 +1,18 @@
+body{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color:whitesmoke ;
+
+}
+
+H1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+
+}
+
+.imageCustom{
+    Width: 40%;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+}
