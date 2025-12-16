@@ -1,12 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food</title>
+    <title>Airplanes & Aviation</title>
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="scratch.css">
 </head>
+
 <body>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Q4T1oK2BUHs?si=TvkDdE-bA6pWXw6M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    
+
+    <!-- On-page anchor -->
+    <a id="top"></a>
+
+    <nav class="top-nav">
+        <a href="index.html">← Back to Professional Site</a>
+    </nav>
+
+    <header class="hero">
+        <h1>Airplanes & Aviation</h1>
+        <p>
+            Airplanes are so cool. Our world can be connected from one end to the other in under 48 hours. Any area of
+            the world is under 2 days away. With having flown over 100 flights over the past few years I still can not
+            imagine and fatham that we are being launched through the air at 500 miles an hour in a metal tube. Its so
+            outlandish it has a special engery to me.
+        </p>
+    </header>
+
+    <div class="airplane-section">
+        <h2>How Airplanes Fly</h2>
+
+        <div class="center-content">
+            <iframe src="https://www.youtube.com/embed/Q4T1oK2BUHs" title="How airplanes fly" allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <div class="airplane-section">
+        <h2>Types of Airplanes</h2>
+
+        <ol>
+            <li>My favorite Commercial Aircraft
+                <ul>
+                    <li>Airbus A350-900 737</li>
+                    <li>Airbus A321 Neo</li>
+                    <li>Boeing 787 Dreamliner</li>
+                </ul>
+            </li>
+            <li>Military Aircraft
+                <ul>
+                    <li>F-22 Raptor</li>
+                    <li>F-35 Lightning II</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="airplane-section">
+        <h2>Modern Aviation</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Bq1tjvk_0YoR3uBMIJ2cqCZ08r7xkjPVuw&s" alt="Qatar Airways a380" class="plane-img">
+    </div>
+
+    <div class="airplane-section">
+        <h2>Global Air Traffic Visualization</h2>
+
+        <div class="tableau-container">
+            <div class="tableauPlaceholder">
+                <object class="tableauViz">
+                    <param name="host_url" value="https://public.tableau.com/" />
+                    <param name="embed_code_version" value="3" />
+                    <param name="site_root" value="" />
+                    <param name="name" value="AirTraffic_16039832612090/Dashboard1" />
+                    <param name="tabs" value="no" />
+                    <param name="toolbar" value="yes" />
+                </object>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var divElement = document.getElementsByClassName("tableauPlaceholder")[0];
+            var vizElement = divElement.getElementsByTagName("object")[0];
+            vizElement.style.display = "block";
+            vizElement.style.width = "100%";
+            vizElement.style.height = "500px";
+        </script>
+    </div>
+
+    <footer class="footer">
+        <a href="#top">Back to top ✈️</a>
+    </footer>
+
 </body>
+
 </html>
