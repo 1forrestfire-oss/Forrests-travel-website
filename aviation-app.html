@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aviation Knowledge Challenge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(to bottom, #e8eceb, #f7f8f8);
+      color: #1f2a24;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .app-container {
+      max-width: 700px;
+      margin: 60px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #2f5d50;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #3b4a44;
+    }
+
+    .question {
+      font-size: 1.2rem;
+      margin: 25px 0;
+    }
+
+    button {
+      background-color: #2f5d50;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin: 10px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #244a40;
+    }
+
+    .feedback {
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .score {
+      margin-top: 20px;
+      font-size: 1.1rem;
+    }
+
+    .nav-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: #2f5d50;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app-container">
+    <h1>✈️ Aviation Knowledge Challenge</h1>
+    <p>Test your knowledge of airplanes, flight, and aviation history.</p>
+
+    <div class="question" id="questionText">
+      Click “Start” to begin!
+    </div>
+
+    <div id="answerButtons"></div>
+
+    <div class="feedback" id="feedback"></div>
+    <div class="score" id="score">Score: 0</div>
+
+    <button id="startButton" onclick="startGame()">Start / Next Question</button>
+
+    <!-- Make sure this filename matches your actual page, e.g. scratch.html or airplanes.html -->
+    <a href="scratch.html" class="nav-link">← Back to Scratch Page</a>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        question: "What force allows an airplane to rise into the air?",
+        answers: ["Thrust", "Lift", "Drag"],
+        correct: 1
+      },
+      {
+        question: "Which company manufactures the 737?",
+        answers: ["Airbus", "Boeing", "Lockheed Martin"],
+        correct: 1
+      },
+      {
+        question: "What part of the airplane controls pitch?",
+        answers: ["Rudder", "Ailerons", "Elevator"],
+        correct: 2
+      },
+      {
+        question: "What altitude do commercial jets typically cruise at?",
+        answers: ["10,000 feet", "35,000 feet", "60,000 feet"],
+        correct: 1
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    let gameOver = false;
+
+    function startGame() {
+      const feedbackEl = document.getElementById("feedback");
+      const questionEl = document.getElementById("questionText");
+      const buttonsDiv = document.getElementById("answerButtons");
+      const startBtn = document.getElementById("startButton");
+
+      // If game is over, reset to play again
+      if (gameOver) {
+        currentQuestion = 0;
+        score = 0;
+        gameOver = false;
+        document.getElementById("score").textContent = "Score: 0";
+        feedbackEl.textContent = "";
+        startBtn.textContent = "Start / Next Question";
+      }
+
+      feedbackEl.textContent = "";
+
+      if (currentQuestion >= questions.length) {
+        questionEl.textContent = "Challenge complete! Final score: " + score + " / " + questions.length;
+        buttonsDiv.innerHTML = "";
+        startBtn.textContent = "Play Again";
+        gameOver = true;
+        return;
+      }
+
+      const q = questions[currentQuestion];
+      questionEl.textContent = q.question;
+
+      buttonsDiv.innerHTML = "";
+
+      q.answers.forEach((answer, index) => {
+        const btn = document.createElement("button");
+        btn.textContent = answer;
+        btn.onclick = () => checkAnswer(index);
+        buttonsDiv.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(selected) {
+      const q = questions[currentQuestion];
+      const feedback = document.getElementById("feedback");
+
+      if (selected === q.correct) {
+        feedback.textContent = "Correct! ✈️";
+        score++;
+      } else {
+        feedback.textContent = "Incorrect. The correct answer was: " + q.answers[q.correct];
+      }
+
+      document.getElementById("score").textContent = "Score: " + score;
+      currentQuestion++;
+    }
+  </script>
+
+</body>
+</html>
