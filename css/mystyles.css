@@ -16,3 +16,58 @@ H1{
     text-align: center;
 
 }
+.resume-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.resume-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.resume-header h1 {
+  color: #2f5d50;
+  margin-bottom: 8px;
+}
+
+.resume-header a {
+  color: #2f5d50;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.resume-block {
+  margin-bottom: 40px;
+}
+
+.resume-entry {
+  margin-bottom: 25px;
+}
+
+.resume-meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.resume-section h2 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  color: #2f5d50;
+}
+
+.resume-section ul {
+  padding-left: 20px;
+}
+
+.resume-section li {
+  margin-bottom: 6px;
+}
+.resume-section {
+  max-width: 900px;
+  margin: 60px auto;   /* THIS centers it */
+  padding: 20px;
+}
